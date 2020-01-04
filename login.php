@@ -1,8 +1,3 @@
-<?php
-if (isset($_POST["submitButton"])) {
-
-}
-?>
 <!DOCTYPE html>
 <html>
 <head>
