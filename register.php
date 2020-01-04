@@ -1,6 +1,6 @@
 <?php
     if (isset($_POST["submitButton"])) {
-        echo "Form was submitted";
+
     }
 ?>
 <!DOCTYPE html>
@@ -14,6 +14,12 @@
         <div class="signInContainer">
 
             <div class="column">
+
+                <div class="header">
+                    <img src="assets/images/shinflix.png" title="Logo" alt="Site logo"/>
+                    <h3>Sign Up</h3>
+                    <span>to continue to  Shinflix</span>
+                </div>
 
                 <form method="POST">
 
@@ -34,6 +40,9 @@
                     <input type="submit" name="submitButton" value="SUBMIT">
 
                 </form>
+
+                <a href="login.php" class="signInMessage">Already have an account? Sign in here!</a>
+
             </div>
 
         </div>
