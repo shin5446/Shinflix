@@ -9,5 +9,4 @@ class Constants {
     public static $emailTaken = "Email already in use";
     public static $passwordDontMatch = "Password don't match";
     public static $passwordLength = "Password must be between 5 and 25 characters";
-
 }
