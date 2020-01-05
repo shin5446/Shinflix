@@ -14,6 +14,27 @@ class Account {
         $this->validateUserName($un);
         $this->validateEmails($em, $em2);
         $this->validatePassword($pw, $pw2);
+
+        if(empty($this->errorArray)) {
+            return $this->insertUserDetails($fn, $ln, $un, $em, $pw);
+        }
+
+        return false;
+    }
+
+    private function insertUserDetails($fn, $ln, $un, $em, $pw) {
+
+        $pw = hash("sha512", $pw);
+
+        $query = $this->con->prepare("INSERT INTO users (firstName, lastName, username, email, password)
+                                        VALUES (:fn, :ln, :un, :em, :pw)");
+        $query->bindValue(":fn", $fn);
+        $query->bindValue(":ln", $ln);
+        $query->bindValue(":un", $un);
+        $query->bindValue(":em", $em);
+        $query->bindValue(":pw", $pw);
+
+        return $query->execute();
     }
 
     private function validateFirstName($fn) {
